@@ -1,0 +1,241 @@
+* {
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    font-family: sans-serif;
+    float: left;
+    background-image: url('/Analog Animated Clock/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#clock {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    background-color: whitesmoke;
+    border: 8px solid black;
+    border-radius: 50%;
+    margin: 50px 20px 50px 50px;
+    box-shadow: inset 0 5px 25px black, 0 5px 25px black, 0 5px 25px black, 0 5px 30px black, 0 5px 35px black, 0 5px 35px black;
+}
+
+
+#clock::before {
+    content: '';
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    left: 18px;
+    top: 10px;
+    border: 18px solid black;
+    border-radius: 50%;
+    z-index: -2;
+}
+
+#clock::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    border-radius: 50%;
+    left: calc(50% - 9px);
+    top: calc(50% - 9px);
+    box-shadow: 0 2px 4px black;
+}
+
+#clock li {
+    list-style-type: none;
+    position: absolute;
+}
+
+.numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    text-align: center;
+}
+
+.numbers span {
+    display: block;
+    color: black;
+    font-size: 2.2rem;
+    text-shadow: 0 5px 18 white, 0 2px 3px white ;
+}
+
+.numbers:nth-child(1) {
+    transform: rotate(30deg);
+}
+
+.numbers:nth-child(1) 
+    span {
+        transform: rotate(-30deg);
+}
+
+.numbers:nth-child(2) {
+    transform: rotate(60deg);
+}
+
+.numbers:nth-child(2) 
+    span {
+        transform: rotate(-60deg);
+}
+
+.numbers:nth-child(3) {
+    transform: rotate(90deg);
+}
+
+.numbers:nth-child(3) 
+span {
+    transform: rotate(-90deg);
+}
+
+.numbers:nth-child(4) {
+    transform: rotate(120deg);
+}
+
+.numbers:nth-child(4) 
+span {
+    transform: rotate(-120deg);
+}
+
+.numbers:nth-child(5) {
+    transform: rotate(150deg);
+}
+
+.numbers:nth-child(5) 
+span {
+    transform: rotate(-150deg);
+}
+
+.numbers:nth-child(6) {
+    transform: rotate(180deg);
+}
+
+.numbers:nth-child(6) 
+span {
+    transform: rotate(-180deg);
+}
+
+.numbers:nth-child(7) {
+    transform: rotate(210deg);
+}
+
+.numbers:nth-child(7) 
+span {
+    transform: rotate(-210deg);
+}
+
+.numbers:nth-child(8) {
+    transform: rotate(240deg);
+}
+
+.numbers:nth-child(8) 
+span {
+    transform: rotate(-240deg);
+}
+
+.numbers:nth-child(9) {
+    transform: rotate(270deg);
+}
+
+.numbers:nth-child(9) 
+span {
+    transform: rotate(-270deg);
+}
+
+.numbers:nth-child(10) {
+    transform: rotate(300deg);
+}
+
+.numbers:nth-child(10) 
+span {
+    transform: rotate(-300deg);
+}
+
+.numbers:nth-child(11) {
+    transform: rotate(330deg);
+}
+
+.numbers:nth-child(11) 
+span {
+    transform: rotate(-330deg);
+}
+
+#seconds {
+    width: 100%;
+    height: 100%;
+    animation: sec 60s steps(60, end) infinite;
+}
+
+#seconds::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 107px;
+    border-radius: 2px;
+    background-color: red;
+    left: calc(50% - 2px);
+    top: calc(50% - 120px + 35px);
+    box-shadow: 1px 2px 3px black;
+    animation: sec 60s steps(60, end) infinite;
+    transform-origin: 50% 85px;
+}
+
+#minutes {
+    width: 100%;
+    height: 100%;
+    animation: sec 3600s steps(60, end) infinite;
+}
+
+#minutes::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 79px;
+    border-radius: 4px 4px 2px 2px;
+    background-color: rgb(8, 8, 156);
+    left: calc(50% + 30px);
+    top: 29%;
+    transform: rotate(-120deg);
+    box-shadow: -1px 0 5px black;
+    animation: minutes 60s steps(60, end) infinite;
+}
+
+#hours {
+    width: 100%;
+    height: 100%;
+    transform: rotate(120deg);
+}
+
+
+#hours::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 65px;
+    border-radius: 4px 4px 2px 2px;
+    background-color: rgb(3, 158, 21);
+    left: calc(50% - 4px);
+    top: 50%;
+    box-shadow: 1px 0 4px black;
+    animation: hours 60s steps(60, end) infinite;
+}
+
+@keyframes sec {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
