@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html,body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+}
+
+.wrapper {
+    display: inline-flex;
+}
+
+.wrapper .icon {
+    margin: 0 20px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+.wrapper .icon span {
+    display: block;
+    height: 60px;
+    width: 60px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper .icon span i {
+    line-height: 60px;
+    font-size: 25px;
+}
+
+.wrapper .icon .tooltip {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .icon:hover .tooltip {
+    bottom: 465px;
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.268, 1.55);
+}
+
+.icon .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: inherit;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.wrapper .icon:hover span {
+    color: white;
+}
+
+.wrapper .icon:hover span, .wrapper .icon:hover .tooltip {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.wrapper .facebook:hover span, .wrapper .facebook:hover .tooltip {
+    background-color: rgb(13, 13, 145);
+}
+
+.wrapper .instagram:hover span, .wrapper .instagram:hover .tooltip {
+    background-color: rgb(230, 93, 93);
+}
+
+.wrapper .twitter:hover span, .wrapper .twitter:hover .tooltip {
+    background-color: rgb(64, 228, 254);
+}
+
+.wrapper .github:hover span, .wrapper .github:hover .tooltip {
+    background-color: rgb(1, 1, 7);
+}
